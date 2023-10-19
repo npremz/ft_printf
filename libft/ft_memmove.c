@@ -1,30 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: npremont <npremont@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/18 22:44:10 by npremont          #+#    #+#             */
-/*   Updated: 2023/10/19 18:08:36 by npremont         ###   ########.fr       */
+/*   Created: 2023/10/12 14:53:07 by npremont          #+#    #+#             */
+/*   Updated: 2023/10/17 14:17:55 by npremont         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
+#include "libft.h"
 
-#include <stdarg.h>
-#include <unistd.h>
-#include <stdlib.h>
-#include "libft/libft.h"
-#include <limits.h>
+void	*ft_memmove(void *dst, const void *src, size_t len)
+{
+	int		i;
+	char	*dst_str;
+	char	*src_str;
 
-/* FUNCTIONS */
-
-int		ft_putchar(char c);
-int		ft_putstr(char *str);
-int		ft_printn(char *str);
-char	*ft_itoa_base(int nbr, char *base);
-char	*ft_litoa_base(long int nbr, char *base);
-char	*ft_utoa(unsigned int n);
-int		ft_printf(const char *input, ...);
-size_t	ft_strlen(const char *str);
+	dst_str = (char *)dst;
+	src_str = (char *)src;
+	if (src < dst && dst - src < (int)len)
+	{
+		i = len - 1;
+		while (i >= 0)
+		{
+			dst_str[i] = src_str[i];
+			i--;
+		}
+		return (dst);
+	}
+	ft_memcpy(dst, src, len);
+	return (dst);
+}

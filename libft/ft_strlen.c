@@ -1,30 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: npremont <npremont@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/18 22:44:10 by npremont          #+#    #+#             */
-/*   Updated: 2023/10/19 18:08:36 by npremont         ###   ########.fr       */
+/*   Created: 2023/10/12 13:43:18 by npremont          #+#    #+#             */
+/*   Updated: 2023/10/17 00:32:52 by npremont         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
+#include "libft.h"
 
-#include <stdarg.h>
-#include <unistd.h>
-#include <stdlib.h>
-#include "libft/libft.h"
-#include <limits.h>
+size_t	ft_strlen(const char *str)
+{
+	size_t	i;
 
-/* FUNCTIONS */
-
-int		ft_putchar(char c);
-int		ft_putstr(char *str);
-int		ft_printn(char *str);
-char	*ft_itoa_base(int nbr, char *base);
-char	*ft_litoa_base(long int nbr, char *base);
-char	*ft_utoa(unsigned int n);
-int		ft_printf(const char *input, ...);
-size_t	ft_strlen(const char *str);
+	i = 0;
+	while (str[i] != '\0')
+		i++;
+	return (i);
+}

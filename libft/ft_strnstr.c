@@ -1,30 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: npremont <npremont@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/18 22:44:10 by npremont          #+#    #+#             */
-/*   Updated: 2023/10/19 18:08:36 by npremont         ###   ########.fr       */
+/*   Created: 2023/10/14 11:55:36 by npremont          #+#    #+#             */
+/*   Updated: 2023/10/16 17:29:35 by npremont         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
+#include "libft.h"
 
-#include <stdarg.h>
-#include <unistd.h>
-#include <stdlib.h>
-#include "libft/libft.h"
-#include <limits.h>
+char	*ft_strnstr(const char *s1, const char *s2, size_t n)
+{
+	size_t	i;
+	size_t	j;
 
-/* FUNCTIONS */
-
-int		ft_putchar(char c);
-int		ft_putstr(char *str);
-int		ft_printn(char *str);
-char	*ft_itoa_base(int nbr, char *base);
-char	*ft_litoa_base(long int nbr, char *base);
-char	*ft_utoa(unsigned int n);
-int		ft_printf(const char *input, ...);
-size_t	ft_strlen(const char *str);
+	i = 0;
+	j = 0;
+	if (s2[j] == '\0')
+		return ((char *)s1);
+	while (s1[i] != '\0' && i < n)
+	{
+		j = 0;
+		if (s1[i] == s2[j])
+		{
+			while (s1[i + j] == s2[j] && s1[i + j] && s2[j] && i + j < n)
+				++j;
+			if (s2[j] == '\0')
+				return ((char *)&s1[i]);
+		}
+		++i;
+	}
+	return (NULL);
+}

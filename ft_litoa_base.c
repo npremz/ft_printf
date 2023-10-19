@@ -1,0 +1,79 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_litoa_base.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: npremont <npremont@student.s19.be>         +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/10/19 13:12:55 by npremont          #+#    #+#             */
+/*   Updated: 2023/10/19 17:52:33 by npremont         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "ft_printf.h"
+
+static char	*ft_putnbr_str(long int nb, char *str, char *base, int pos)
+{
+	int			baselen;
+	long int	n;
+
+	n = nb;
+	baselen = ft_strlen(base);
+	if (n < 0)
+	{
+		str[0] = '-';
+		return (ft_putnbr_str(n * -1, str, base, pos + 1));
+	}
+	else
+	{
+		if (n < baselen)
+		{
+			str[pos] = base[n];
+		}
+		else
+		{
+			ft_putnbr_str(n / baselen, str, base, pos - 1);
+			str[pos] = base[n % baselen];
+		}
+		return (str);
+	}
+}
+
+static char	*ft_str_alloc(long int n, int size)
+{
+	char	*str;
+
+	if (n < 0)
+	{
+		str = malloc(size * sizeof(char) + 2);
+		str[size + 1] = '\0';
+	}
+	else 
+	{
+		str = malloc(size * sizeof(char) + 1);
+		str[size] = '\0';
+	}
+	return (str);
+}
+
+char	*ft_litoa_base(long int nbr, char *base)
+{
+	char		*str;
+	int			baselen;
+	long int	og_nbr;
+	int			i;
+
+	baselen = ft_strlen(base);
+	og_nbr = nbr;
+	i = 1;
+	if (nbr < 0)
+		nbr *= -1;
+	while (nbr >= baselen)
+	{
+		nbr = nbr / baselen;
+		i++;
+	}
+	str = ft_str_alloc(og_nbr, i);
+	str = ft_putnbr_str(og_nbr, str, base, i - 1);
+	return (str);
+}

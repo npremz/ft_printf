@@ -1,30 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: npremont <npremont@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/18 22:44:10 by npremont          #+#    #+#             */
-/*   Updated: 2023/10/19 18:08:36 by npremont         ###   ########.fr       */
+/*   Created: 2023/10/12 14:05:10 by npremont          #+#    #+#             */
+/*   Updated: 2023/10/16 17:47:36 by npremont         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
+#include "libft.h"
 
-#include <stdarg.h>
-#include <unistd.h>
-#include <stdlib.h>
-#include "libft/libft.h"
-#include <limits.h>
+void	ft_bzero(void *s, size_t n)
+{
+	size_t	i;
 
-/* FUNCTIONS */
-
-int		ft_putchar(char c);
-int		ft_putstr(char *str);
-int		ft_printn(char *str);
-char	*ft_itoa_base(int nbr, char *base);
-char	*ft_litoa_base(long int nbr, char *base);
-char	*ft_utoa(unsigned int n);
-int		ft_printf(const char *input, ...);
-size_t	ft_strlen(const char *str);
+	i = -1;
+	while (++i < n)
+		*(char *)(s + i) = 0;
+}

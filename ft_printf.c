@@ -6,7 +6,7 @@
 /*   By: npremont <npremont@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 22:39:30 by npremont          #+#    #+#             */
-/*   Updated: 2023/10/20 12:41:37 by npremont         ###   ########.fr       */
+/*   Updated: 2023/10/20 12:44:55 by npremont         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,17 +75,3 @@ int	ft_printf(const char *input, ...)
 	va_end(list);
 	return (count);
 }
-
-// #include <stdio.h>
-
-// int	main(void)
-// {
-// 	ft_printf("Mine:\n");
-// 	ft_printf("Length printed : %d\n\n", ft_printf("%p\n", NULL));
-// 	ft_printf("Length printed : %i\n\n", ft_printf("%p\n", ""));
-
-// 	printf("Og:\n");
-// 	printf("Length printed : %d\n\n", printf("%p\n", NULL));
-// 	printf("Length printed : %i\n\n", printf("%p\n", ""));
-// 	return (0);
-// }

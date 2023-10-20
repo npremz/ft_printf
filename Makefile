@@ -6,7 +6,7 @@
 #    By: npremont <npremont@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/19 11:13:51 by npremont          #+#    #+#              #
-#    Updated: 2023/10/20 11:34:23 by npremont         ###   ########.fr        #
+#    Updated: 2023/10/20 12:44:45 by npremont         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ OBJECTS = $(SOURCES:.c=.o)
 
 HEADER = ft_printf.h
 
-GCC_FLAGS = -Wall -Wextra -Werror -fsanitize=address -g
+GCC_FLAGS = -Wall -Wextra -Werror
 
 LIB = libft/libft.a
 
@@ -46,5 +46,3 @@ fclean:
 re: fclean all
 
 .PHONY: all clean fclean re
-
-# gcc $(GCC_FLAGS) -o $(NAME) $(OBJECTS) $(LIB)

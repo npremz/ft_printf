@@ -6,13 +6,13 @@
 #    By: npremont <npremont@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/19 11:13:51 by npremont          #+#    #+#              #
-#    Updated: 2023/10/19 18:24:09 by npremont         ###   ########.fr        #
+#    Updated: 2023/10/20 11:34:23 by npremont         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = printf
+NAME = libftprintf.a
 
-SOURCES = ft_printf.c chars.c numbers.c ft_itoa_base.c ft_utoa.c ft_litoa_base.c
+SOURCES = ft_printf.c chars.c numbers.c ft_utoa_base.c ft_utoa.c ft_lutoa_base.c ft_itoa.c
 
 OBJECTS = $(SOURCES:.c=.o)
 
@@ -27,8 +27,7 @@ LIB_PATH = libft
 all: $(NAME)
 
 $(NAME): $(OBJECTS) $(LIB)
-	gcc $(GCC_FLAGS) -o $(NAME) $(OBJECTS) $(LIB)
-	make clean
+	ar src $(NAME) $(OBJECTS)
 
 $(OBJECTS):
 	gcc $(GCC_FLAGS) -c -I $(HEADER) ${@:.o=.c} -o $@
@@ -47,3 +46,5 @@ fclean:
 re: fclean all
 
 .PHONY: all clean fclean re
+
+# gcc $(GCC_FLAGS) -o $(NAME) $(OBJECTS) $(LIB)

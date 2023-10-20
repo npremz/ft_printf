@@ -6,7 +6,7 @@
 /*   By: npremont <npremont@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 22:44:10 by npremont          #+#    #+#             */
-/*   Updated: 2023/10/19 18:08:36 by npremont         ###   ########.fr       */
+/*   Updated: 2023/10/20 12:35:50 by npremont         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,10 @@
 int		ft_putchar(char c);
 int		ft_putstr(char *str);
 int		ft_printn(char *str);
-char	*ft_itoa_base(int nbr, char *base);
-char	*ft_litoa_base(long int nbr, char *base);
+int		ft_printaddr(char *str);
+char	*ft_utoa_base(unsigned int nbr, char *base);
+char	*ft_lutoa_base(unsigned long int nbr, char *base);
 char	*ft_utoa(unsigned int n);
 int		ft_printf(const char *input, ...);
 size_t	ft_strlen(const char *str);
+char	*ft_itoa(int n);

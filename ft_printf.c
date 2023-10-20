@@ -6,7 +6,7 @@
 /*   By: npremont <npremont@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 22:39:30 by npremont          #+#    #+#             */
-/*   Updated: 2023/10/20 12:44:55 by npremont         ###   ########.fr       */
+/*   Updated: 2023/10/20 14:38:40 by npremont         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ static int	ft_handlespec(const char c, va_list arg)
 		return (ft_printn(ft_utoa_base(va_arg(arg, int), "0123456789ABCDEF")));
 	if (c == '%')
 		return (ft_putchar('%'));
-	return (0);
+	return (-1);
 }
 
 static int	ft_handlestr(const char *input, va_list list, int count)

@@ -6,7 +6,7 @@
 #    By: npremont <npremont@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/19 11:13:51 by npremont          #+#    #+#              #
-#    Updated: 2023/10/20 12:44:45 by npremont         ###   ########.fr        #
+#    Updated: 2023/10/20 12:50:17 by npremont         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,28 +20,19 @@ HEADER = ft_printf.h
 
 GCC_FLAGS = -Wall -Wextra -Werror
 
-LIB = libft/libft.a
-
-LIB_PATH = libft
-
 all: $(NAME)
 
-$(NAME): $(OBJECTS) $(LIB)
+$(NAME): $(OBJECTS)
 	ar src $(NAME) $(OBJECTS)
 
 $(OBJECTS):
 	gcc $(GCC_FLAGS) -c -I $(HEADER) ${@:.o=.c} -o $@
 
-$(LIB):
-	cd $(LIB_PATH) && make bonus
-
 clean:
 	rm -f $(OBJECTS)
-	cd $(LIB_PATH) && make clean
 
 fclean:
 	rm -f $(NAME) $(OBJECTS)
-	cd $(LIB_PATH) && make fclean
 
 re: fclean all
 

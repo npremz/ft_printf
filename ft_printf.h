@@ -15,7 +15,6 @@
 #include <stdarg.h>
 #include <unistd.h>
 #include <stdlib.h>
-#include "libft/libft.h"
 #include <limits.h>
 
 /* FUNCTIONS */

@@ -38,4 +38,4 @@ Et c'est à peu près tout !
 
 On peut s'amuser à sécurisé tout les `write()` utilisés même si ça ne sert pas à grand chose vu qu'on écrit dans le standard ouput (cas d'erreurs pratiquement non-existants).
 
-Si vous rencontrez des difficultés pour le projet hésitez pas à me contacter, je vous aiderais avec joie 🙏, `npremont` sur l'intra.
+Si vous rencontrez des difficultés pour le projet hésitez pas à me contacter, je vous aiderai avec joie 🙏, `npremont` sur l'intra.

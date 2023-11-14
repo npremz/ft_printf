@@ -5,7 +5,7 @@ Projet du premier cercle de 42.
 La nouvelle notion pour se projet est l'usage d'arguments indéfinis par le prototype\
 `int  ft_printf(char *input, ...)`
 
-Pour utiliser les listes d'arguments indéfinis il nous faut la librairie `<stdarg.h>` qui va inclure dans notre programme des macros et fonctions utiles.
+Pour utiliser les listes d'arguments indéfinis, il nous faut la librairie `<stdarg.h>` qui va inclure dans notre programme des macros et fonctions utiles.
 
 Il nous faut un moyen de lire les arguments indéfinis un à un. Pour le faire, il nous faut une variable de type `va_list` importé par la librairie que l'on va pouvoir appeler dans la fonction `va_start()`.
 
